@@ -134,6 +134,142 @@ section{padding:100px 0}
 .ticks li::before{content:"";flex-shrink:0;width:20px;height:20px;margin-top:3px;border-radius:6px;background:var(--grad) center/12px no-repeat;-webkit-mask:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E"),var(--grad)}
 .promo-tag{display:inline-flex;align-items:center;gap:8px;margin:0 0 30px 76px;padding:8px 16px;border-radius:999px;background:var(--grad2);color:#fff;font-weight:600;font-size:.85rem;box-shadow:0 10px 25px -10px var(--p3)}
 
+
+/* projects */
+.proj{display:grid;grid-template-columns:1fr 1.15fr;gap:0;padding:0;overflow:hidden}
+.proj-visual{position:relative;min-height:340px;background:var(--grad);padding:30px;display:flex;align-items:center;justify-content:center}
+.mock{width:100%;max-width:380px;border-radius:16px;background:var(--bg2);box-shadow:0 30px 60px -20px rgba(0,0,0,.55);overflow:hidden;transform:rotate(-2deg);transition:.5s}
+.proj:hover .mock{transform:rotate(0) scale(1.03)}
+.mock-top{display:flex;gap:6px;padding:10px 12px;background:color-mix(in srgb,var(--text) 6%,transparent)}
+.mock-top i{width:10px;height:10px;border-radius:50%;background:#ff5f57}.mock-top i:nth-child(2){background:#febc2e}.mock-top i:nth-child(3){background:#28c840}
+.mock-body{display:grid;grid-template-columns:90px 1fr;min-height:200px}
+.mock-side{padding:12px 10px;display:grid;gap:8px;align-content:start;border-right:1px solid var(--card-b)}
+.mock-side b{height:8px;border-radius:4px;background:color-mix(in srgb,var(--text) 14%,transparent)}
+.mock-side b:first-child{background:var(--grad)}
+.mock-main{padding:14px;display:grid;gap:10px;align-content:start}
+.mock-main .h{height:14px;width:70%;border-radius:5px;background:var(--grad)}
+.mock-main .l{height:7px;border-radius:4px;background:color-mix(in srgb,var(--text) 12%,transparent)}
+.mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+.mock-cards span{height:46px;border-radius:10px;background:color-mix(in srgb,var(--p1) 18%,transparent);border:1px solid var(--card-b)}
+.proj-info{padding:36px}
+.proj-info h3{font-size:1.5rem;margin:10px 0 10px}
+.proj-info p{color:var(--muted)}
+.feat{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:20px 0}
+.feat li{display:flex;gap:10px;font-size:.93rem;align-items:flex-start}
+.feat li span{flex-shrink:0}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.tags span{padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:600;background:color-mix(in srgb,var(--p2) 13%,transparent);color:var(--p2)}
+.note{margin-top:18px;font-size:.82rem;color:var(--muted);display:flex;gap:8px;align-items:center}
+@media(max-width:980px){.proj{grid-template-columns:1fr}.feat{grid-template-columns:1fr}}
+
+
+/* project improvements */
+.imp{display:grid;grid-template-columns:1.08fr 1fr;gap:34px;align-items:center;margin-bottom:70px}
+.imp:nth-child(even) .imp-view{order:2}
+.imp-view{position:relative}
+.browser{border-radius:18px;overflow:hidden;background:var(--bg2);border:1px solid var(--card-b);box-shadow:0 30px 60px -25px rgba(0,0,0,.55);transition:.4s}
+.imp:hover .browser{transform:translateY(-6px);box-shadow:0 40px 70px -25px color-mix(in srgb,var(--p1) 45%,transparent)}
+.b-top{display:flex;align-items:center;gap:7px;padding:10px 14px;background:color-mix(in srgb,var(--text) 6%,transparent);border-bottom:1px solid var(--card-b)}
+.b-top i{width:11px;height:11px;border-radius:50%;background:#ff5f57}.b-top i:nth-child(2){background:#febc2e}.b-top i:nth-child(3){background:#28c840}
+.b-url{flex:1;margin-left:8px;padding:5px 12px;border-radius:8px;background:var(--bg);font-size:.74rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.b-live{font-size:.7rem;font-weight:700;color:var(--ok);display:flex;align-items:center;gap:5px}
+.b-live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ok);animation:pulse 2s infinite}
+.screen{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--bg)}
+.screen iframe{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
+.screen .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.9rem;padding:20px}
+.screen .ph b{display:block;font-size:2.4rem;margin-bottom:6px}
+.screen .shade{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;gap:10px;padding:18px;background:linear-gradient(transparent 55%,rgba(5,8,20,.75));opacity:0;transition:.3s}
+.imp:hover .screen .shade,.screen:focus-within .shade{opacity:1}
+.v-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;font-weight:600;font-size:.86rem;border:none;cursor:pointer;font-family:inherit;text-decoration:none}
+.v-btn.solid{background:var(--grad);color:#fff}
+.v-btn.glass{background:rgba(255,255,255,.18);color:#fff;border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px)}
+.imp-info .idx{font-family:Poppins;font-weight:800;font-size:.85rem;color:var(--p2);letter-spacing:.12em}
+.imp-info h3{font-size:1.65rem;margin:6px 0 10px}
+.imp-info .pitch{color:var(--muted);font-size:1.02rem}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.fact{padding:10px 14px;border-radius:14px;background:var(--card);border:1px solid var(--card-b);min-width:110px}
+.fact b{display:block;font-family:Poppins;font-size:1.25rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.2}
+.fact small{color:var(--muted);font-size:.78rem}
+.imp-tabs{display:inline-flex;gap:4px;padding:4px;border-radius:12px;background:var(--card);border:1px solid var(--card-b);margin-bottom:14px}
+.imp-tabs button{border:none;background:none;padding:8px 16px;border-radius:9px;font:inherit;font-size:.86rem;font-weight:600;color:var(--muted);cursor:pointer}
+.imp-tabs button.on{background:var(--grad);color:#fff}
+.imp-pane{display:none;animation:fadeUp .4s ease}
+.imp-pane.on{display:block}
+.imp-pane ul{list-style:none;display:grid;gap:9px}
+.imp-pane li{display:flex;gap:10px;color:var(--muted);font-size:.94rem}
+.imp-pane li b{color:var(--text)}
+.imp-pane li::before{content:"";flex-shrink:0;width:18px;height:18px;margin-top:3px;border-radius:6px;background:var(--grad) center/11px no-repeat;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E"),var(--grad)}
+.detail-grid{display:grid;gap:14px}
+.detail-grid h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--p2);margin-bottom:8px}
+.imp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.imp-tags span{padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:600;background:color-mix(in srgb,var(--p1) 14%,transparent);color:var(--p1)}
+[data-theme="dark"] .imp-tags span{color:#b9a8ff}
+.imp-open{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+#viewer{position:fixed;inset:0;z-index:400;background:rgba(5,8,20,.82);backdrop-filter:blur(6px);display:none;flex-direction:column;padding:18px}
+#viewer.open{display:flex}
+#viewer .vbar{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:12px}
+#viewer .vbar b{flex:1;font-family:Poppins}
+#viewer iframe{flex:1;width:100%;border:0;border-radius:14px;background:#fff}
+@media(max-width:980px){.imp{grid-template-columns:1fr;gap:22px}.imp:nth-child(even) .imp-view{order:0}.imp-info h3{font-size:1.4rem}}
+
+
+/* public mock screens */
+.mockpage{position:absolute;top:0;left:0;width:1440px;height:900px;transform-origin:0 0;background:#f5f7fb;color:#18203a;font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.45;overflow:hidden;pointer-events:none}
+.mockpage *{box-sizing:border-box}
+.sample{position:absolute;top:12px;right:12px;z-index:3;padding:4px 10px;border-radius:999px;font-size:.7rem;font-weight:700;background:rgba(245,158,11,.92);color:#2b1a00}
+.m-top{height:64px;display:flex;align-items:center;gap:14px;padding:0 26px;background:#fff;border-bottom:1px solid #e3e7f1}
+.m-logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#6d4aff,#00b8d9);color:#fff;font-weight:800;display:grid;place-items:center}
+.m-sub{color:#6b7493;font-size:13px}.m-sp{flex:1}
+.m-pill{padding:5px 12px;border-radius:999px;background:#efeaff;color:#6d4aff;font-weight:700;font-size:13px}
+.m-btn{padding:8px 13px;border-radius:10px;border:1px solid #e3e7f1;background:#fff;font-weight:600;font-size:13px}
+.m-body{padding:22px 26px}
+.m-row{display:flex;gap:12px;align-items:center}
+.m-search{flex:1;height:50px;border-radius:13px;border:1px solid #e3e7f1;background:#fff;display:flex;align-items:center;padding:0 16px;color:#8a92ad}
+.m-sel{height:50px;padding:0 16px;border-radius:12px;border:1px solid #e3e7f1;background:#fff;display:flex;align-items:center;font-weight:600}
+.m-chips{display:flex;gap:8px;margin:16px 0}
+.m-chip{padding:7px 14px;border-radius:999px;border:1px solid #e3e7f1;background:#fff;font-weight:600;font-size:13px;color:#6b7493}
+.m-chip.on{background:linear-gradient(135deg,#6d4aff,#00b8d9);color:#fff;border:none}
+.m-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.m-card{background:#fff;border:1px solid #e3e7f1;border-radius:16px;padding:16px;box-shadow:0 10px 26px -20px rgba(30,40,90,.5)}
+.m-cat{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#00a3c4}
+.m-card h5{font-size:16px;margin:2px 0 10px}
+.m-txt{padding:10px 12px;border-radius:11px;background:#f6f4ff;border:1px solid #ebe7fb;font-size:13.5px}
+.m-note{margin-top:10px;padding:8px 10px;border-radius:10px;background:#fff6d6;border:1px solid #f3d36b;color:#7a5b00;font-size:12.5px}
+.m-copy{margin-top:12px;height:36px;border-radius:10px;background:linear-gradient(135deg,#6d4aff,#00b8d9);color:#fff;font-weight:700;font-size:13px;display:grid;place-items:center}
+.m-side{position:absolute;inset:0 auto 0 0;width:250px;background:#101a33;color:#c3cbe4;padding:18px 14px}
+.m-side .brand{display:flex;gap:10px;align-items:center;color:#fff;font-weight:800;margin-bottom:18px}
+.m-side .grp{font-size:11px;text-transform:uppercase;letter-spacing:.12em;opacity:.5;margin:14px 8px 6px}
+.m-side .it{padding:8px 10px;border-radius:9px;font-size:13.5px;margin-bottom:2px}
+.m-side .it.on{background:linear-gradient(90deg,rgba(109,74,255,.45),rgba(0,184,217,.15));color:#fff}
+.m-main{position:absolute;left:250px;right:0;top:0;bottom:0}
+.m-kpis{display:grid;gap:14px;margin-bottom:16px}
+.m-kpi{background:#fff;border:1px solid #e3e7f1;border-radius:14px;padding:14px 16px}
+.m-kpi small{color:#6b7493;font-size:12.5px;display:block}
+.m-kpi b{font-size:28px;font-weight:800;display:block;margin-top:2px}
+.m-kpi i{font-style:normal;font-size:12px;font-weight:700}
+.up{color:#10b981}.down{color:#ef4444}
+.m-panel{background:#fff;border:1px solid #e3e7f1;border-radius:14px;padding:14px 16px}
+.m-panel h6{font-size:14.5px;margin-bottom:8px}
+.m-panel small{color:#6b7493}
+.m-table{width:100%;border-collapse:collapse;font-size:13px}
+.m-table th{text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:#6b7493;padding:7px 8px;border-bottom:1px solid #e3e7f1;background:#f8f9fd}
+.m-table td{padding:7px 8px;border-bottom:1px solid #eef1f7}
+.st{padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:700}
+.st.a{background:#fee2e2;color:#b91c1c}.st.l{background:#fef3c7;color:#92400e}.st.p{background:#e0e7ff;color:#4338ca}
+.hd{background:linear-gradient(135deg,#142b4c,#1f7a8c);color:#fff;padding:18px 26px;display:flex;align-items:center;gap:16px}
+.hd b{font-size:22px}.hd span{opacity:.8;font-size:13px}
+.m-filters{display:flex;gap:8px;padding:12px 26px;background:#fff;border-bottom:1px solid #e3e7f1;flex-wrap:wrap}
+.m-f{padding:7px 12px;border-radius:10px;border:1px solid #e3e7f1;font-size:12.5px;font-weight:600;background:#fff}
+.m-f.on{background:#142b4c;color:#fff;border-color:#142b4c}
+.tt th,.tt td{text-align:center;padding:7px 4px}
+.tt td:first-child,.tt th:first-child{text-align:left;padding-left:10px}
+.cell{display:block;height:24px;border-radius:6px;font-size:11.5px;font-weight:700;line-height:24px;color:#fff}
+.c-g{background:#10b981}.c-y{background:#f59e0b}.c-r{background:#ef4444}.c-n{background:#e5e7eb;color:#9ca3af}
+.cur{outline:3px solid #6d4aff;outline-offset:1px}
+tr.off td{opacity:.4}
+.legend{display:flex;gap:14px;font-size:12.5px;color:#6b7493;align-items:center}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+
 /* skills */
 .tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:34px}
 .tab{padding:11px 22px;border-radius:999px;border:1px solid var(--card-b);background:var(--card);color:var(--muted);cursor:pointer;font-weight:600;font-family:inherit;font-size:.92rem;transition:.25s}
@@ -249,6 +385,7 @@ footer{padding:34px 0;text-align:center;color:var(--muted);font-size:.9rem;borde
     <ul class="links" id="links">
       <li><a href="#about" class="active">About</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#improvements">Improvements</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#trust">Trust &amp; Safety</a></li>
       <li><a href="#achievements">Achievements</a></li>
@@ -369,6 +506,229 @@ footer{padding:34px 0;text-align:center;color:var(--muted);font-size:.9rem;borde
     </div>
   </div>
 </section>
+
+
+<!-- PROJECT IMPROVEMENTS (public version: fictional sample data) -->
+<section id="improvements">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Built for My Team</span><h2>Project <span class="grad-text">Improvements</span></h2><p>Tools I designed and built for my team to replace manual spreadsheet work. The previews use fictional sample data; the real tools are internal and contain company data.</p></div>
+    <div id="impList">
+
+      <div class="imp reveal">
+        <div class="imp-view"><div class="browser">
+          <div class="b-top"><i></i><i></i><i></i><span class="b-url">chat-scripts-library</span><span class="b-live">DEMO</span></div>
+          <div class="screen"><div class="mockpage" data-mock="scripts"></div><span class="sample">Sample data</span>
+            <div class="shade"><a class="v-btn solid" target="_blank" rel="noopener" href="/chat-scripts-library/">🚀 Try the live demo ↗</a></div></div>
+        </div></div>
+        <div class="imp-info">
+          <span class="idx">PROJECT 01 · TEAM SCRIPTS</span>
+          <h3>Multilingual Chat Scripts Library</h3>
+          <p class="pitch">A searchable, multilingual library of every approved chat script. Agents find the right reply in seconds and copy it in the customer's language with one click.</p>
+          <div class="facts"><div class="fact"><b>8</b><small>Languages</small></div><div class="fact"><b>1-click</b><small>Copy</small></div><div class="fact"><b>Live</b><small>Synced to sheet</small></div></div>
+          <div class="imp-tabs"><button class="on" data-pane="c">Concise</button><button data-pane="d">Detailed</button></div>
+          <div class="imp-pane on" data-p="c"><ul>
+            <li><b>Problem:</b>&nbsp;scripts sat in a long spreadsheet, so finding the right one mid-chat was slow and replies weren't consistent.</li>
+            <li><b>Solution:</b>&nbsp;one page with search, language switching and one-click copy.</li>
+            <li><b>Result:</b>&nbsp;faster replies and the same approved tone in every language.</li>
+          </ul></div>
+          <div class="imp-pane" data-p="d"><div class="detail-grid">
+            <div><h4>Key features</h4><ul>
+              <li>Search by issue, status or keyword, with a&nbsp;<b>/</b>&nbsp;keyboard shortcut.</li>
+              <li>Scripts in&nbsp;<b>8 languages</b>, with an optional "Show English too" view to check the meaning.</li>
+              <li>One-click copy in the chosen language. Agent notes are shown separately and&nbsp;<b>never copied</b>.</li>
+              <li><b>Agent</b>&nbsp;and&nbsp;<b>Admin</b>&nbsp;sign-in. Admins add, edit and delete scripts on the page.</li>
+            </ul></div>
+            <div><h4>How it works</h4><ul>
+              <li>Reads and writes a shared spreadsheet live through a Google Apps Script backend, so the page and the sheet always match.</li>
+              <li>One login is shared across the team's tools.</li>
+            </ul></div>
+          </div></div>
+          <div class="imp-tags"><span>HTML / CSS / JavaScript</span><span>Google Apps Script</span><span>Google Sheets</span><span>Role-based access</span><span>Cortana (AI)</span></div>
+        </div>
+      </div>
+
+      <div class="imp reveal">
+        <div class="imp-view"><div class="browser">
+          <div class="b-top"><i></i><i></i><i></i><span class="b-url">attendance-dashboard</span><span class="b-live">PREVIEW</span></div>
+          <div class="screen"><div class="mockpage" data-mock="hc"></div><span class="sample">Sample data</span></div>
+        </div></div>
+        <div class="imp-info">
+          <span class="idx">PROJECT 02 · HC TRACKER</span>
+          <h3>Attendance &amp; Leave Management (HC Tracker)</h3>
+          <p class="pitch">A complete workforce dashboard built on the team's headcount sheet: attendance, leave, roster, shrinkage, attrition and punch-in, all in one place.</p>
+          <div class="facts"><div class="fact"><b>14</b><small>Dashboard views</small></div><div class="fact"><b>8</b><small>Live charts</small></div><div class="fact"><b>3</b><small>Access roles</small></div></div>
+          <div class="imp-tabs"><button class="on" data-pane="c">Concise</button><button data-pane="d">Detailed</button></div>
+          <div class="imp-pane on" data-p="c"><ul>
+            <li><b>Problem:</b>&nbsp;attendance and leave lived in a large grid of codes, so working out balances, shrinkage or attrition took manual effort.</li>
+            <li><b>Solution:</b>&nbsp;a sign-in dashboard that turns the codes into clear views, charts and approvals.</li>
+            <li><b>Result:</b>&nbsp;real-time headcount visibility for the team lead, and self-service for agents.</li>
+          </ul></div>
+          <div class="imp-pane" data-p="d"><div class="detail-grid">
+            <div><h4>Key features</h4><ul>
+              <li><b>Overview</b>&nbsp;with a daily attendance trend, status mix and a "Today's Attention List" of absences, late logins and pending leave.</li>
+              <li><b>Agent attendance:</b>&nbsp;monthly calendar, attendance % by month, late-login records and leave history.</li>
+              <li><b>Leave management:</b>&nbsp;agents apply for leave, with an approval queue, leave balances and a monthly summary.</li>
+              <li><b>Weekly roster</b>&nbsp;with editing and edit history, plus a&nbsp;<b>punch-in board</b>.</li>
+              <li><b>Workforce analytics:</b>&nbsp;headcount, joiners and leavers, shrinkage (planned and unplanned) and attrition (monthly, YTD and annualised), with the formulas shown on the page.</li>
+              <li><b>Data quality</b>&nbsp;view that flags missing entries.</li>
+            </ul></div>
+            <div><h4>How it works</h4><ul>
+              <li>Each person signs in with their own ID. Agents see only their own data. Team Leader and Admin views see the whole team.</li>
+              <li>Live data from the headcount sheet via Google Apps Script, with a saved snapshot as a fallback, plus CSV and PDF export.</li>
+            </ul></div>
+          </div></div>
+          <div class="imp-tags"><span>HTML / CSS / JavaScript</span><span>Google Apps Script</span><span>Google Sheets</span><span>Workforce Management</span><span>Cortana (AI)</span></div>
+        </div>
+      </div>
+
+      <div class="imp reveal">
+        <div class="imp-view"><div class="browser">
+          <div class="b-top"><i></i><i></i><i></i><span class="b-url">performance-dashboard</span><span class="b-live">PREVIEW</span></div>
+          <div class="screen"><div class="mockpage" data-mock="raw"></div><span class="sample">Sample data</span></div>
+        </div></div>
+        <div class="imp-info">
+          <span class="idx">PROJECT 03 · RAWDATA DASHBOARD</span>
+          <h3>Team Performance Dashboard (RawData)</h3>
+          <p class="pitch">An executive performance dashboard on top of the team's raw data sheet: tickets, CSAT, chat experience, city and language inflow, conversion and incentive tracking.</p>
+          <div class="facts"><div class="fact"><b>D · W · M</b><small>Time views</small></div><div class="fact"><b>10+</b><small>Filters</small></div><div class="fact"><b>Excel · PDF</b><small>Export</small></div></div>
+          <div class="imp-tabs"><button class="on" data-pane="c">Concise</button><button data-pane="d">Detailed</button></div>
+          <div class="imp-pane on" data-p="c"><ul>
+            <li><b>Problem:</b>&nbsp;performance numbers had to be pulled and pivoted by hand from thousands of raw data rows.</li>
+            <li><b>Solution:</b>&nbsp;a live dashboard with an executive summary, drill-down filters and ready-made reports.</li>
+            <li><b>Result:</b>&nbsp;one place to review team, agent, city and issue-level performance.</li>
+          </ul></div>
+          <div class="imp-pane" data-p="d"><div class="detail-grid">
+            <div><h4>Key features</h4><ul>
+              <li><b>Executive view</b>&nbsp;with daily, weekly and monthly trends for tickets and CSAT.</li>
+              <li><b>Chat experience:</b>&nbsp;response rate, first response time (FRT) and average handling time (AHT), by day, week and agent.</li>
+              <li><b>Issue mix &amp; CSAT</b>&nbsp;at several category levels, with a trend for the top 5 issues.</li>
+              <li><b>City &amp; language:</b>&nbsp;organic vs non-organic inflow, city ranking and a language comparison.</li>
+              <li><b>Conversion &amp; incentives:</b>&nbsp;conversion rate, results by city, product and agent, and a month-to-date incentive scorecard with pass/fail gates.</li>
+            </ul></div>
+            <div><h4>How it works</h4><ul>
+              <li>Filters by agent, language, city, category, channel, status and product, with a one-click reset.</li>
+              <li>Live from the raw data sheet via Google Apps Script, with built-in data checks, metric definitions, and Excel and PDF export.</li>
+            </ul></div>
+          </div></div>
+          <div class="imp-tags"><span>HTML / CSS / JavaScript</span><span>Google Apps Script</span><span>Data Visualisation</span><span>KPI Reporting</span><span>Cortana (AI)</span></div>
+        </div>
+      </div>
+
+      <div class="imp reveal">
+        <div class="imp-view"><div class="browser">
+          <div class="b-top"><i></i><i></i><i></i><span class="b-url">ticket-tracker</span><span class="b-live">PREVIEW</span></div>
+          <div class="screen"><div class="mockpage" data-mock="tt"></div><span class="sample">Sample data</span></div>
+        </div></div>
+        <div class="imp-info">
+          <span class="idx">PROJECT 04 · TICKET TRACKER</span>
+          <h3>Live Ticket Tracker</h3>
+          <p class="pitch">A live, half-hourly ticket tracker that shows each agent's progress against target in real time, with inflow analytics and a leaderboard.</p>
+          <div class="facts"><div class="fact"><b>30 min</b><small>Live intervals</small></div><div class="fact"><b>6</b><small>Views</small></div><div class="fact"><b>🔔</b><small>Reminders</small></div></div>
+          <div class="imp-tabs"><button class="on" data-pane="c">Concise</button><button data-pane="d">Detailed</button></div>
+          <div class="imp-pane on" data-p="c"><ul>
+            <li><b>Problem:</b>&nbsp;tracking ticket targets meant checking form responses and sending manual updates every half hour.</li>
+            <li><b>Solution:</b>&nbsp;a live colour-coded tracker, with a one-click update message and reminders.</li>
+            <li><b>Result:</b>&nbsp;the team lead can see straight away who is on track, and the team can see live targets.</li>
+          </ul></div>
+          <div class="imp-pane" data-p="d"><div class="detail-grid">
+            <div><h4>Key features</h4><ul>
+              <li><b>Live 30-min view:</b>&nbsp;one column per half hour, coloured green (target met), yellow (close), red (below) or grey (not started). Agents on leave are greyed out.</li>
+              <li><b>Copy update message</b>&nbsp;for the team channel in one click, plus browser reminders.</li>
+              <li><b>Daily view</b>&nbsp;hour by hour, with average per hour and pending against target.</li>
+              <li><b>Duplicate &amp; rejected</b>&nbsp;ticket tracking, with alerts when they spike.</li>
+              <li><b>Inflow analytics:</b>&nbsp;issue categories against the previous day, each day against the same day last week, a leaderboard and a 14-day trend.</li>
+            </ul></div>
+            <div><h4>How it works</h4><ul>
+              <li>Live from form responses via Google Apps Script, refreshed through the day.</li>
+              <li>Agent (view) and Admin (view + edit) sign-in, with filters for language, shift and present-only, and CSV export.</li>
+            </ul></div>
+          </div></div>
+          <div class="imp-tags"><span>HTML / CSS / JavaScript</span><span>Google Apps Script</span><span>Real-time Tracking</span><span>Google Forms</span><span>Cortana (AI)</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+(() => {
+  // deterministic fake data
+  let seed = 7; const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const R = (a, b) => Math.round(a + rnd() * (b - a));
+  const P = ['#6d4aff', '#00b8d9', '#f59e0b', '#ef4444', '#10b981', '#ec4899'];
+  const bars = (series, colors, w, h, labels) => { const n = series[0].length, max = Math.max(...series[0].map((_, i) => series.reduce((s, x) => s + x[i], 0))) * 1.1, bw = w / n;
+    let g = ''; for (let i = 0; i < n; i++) { let y = h; series.forEach((s, k) => { const bh = s[i] / max * (h - 18); y -= bh; g += `<rect x="${i * bw + bw * .18}" y="${y}" width="${bw * .64}" height="${bh}" rx="3" fill="${colors[k]}"/>`; });
+      if (labels) g += `<text x="${i * bw + bw / 2}" y="${h + 14}" font-size="11" fill="#8a92ad" text-anchor="middle">${labels[i]}</text>`; }
+    return `<svg width="${w}" height="${h + 18}">${g}</svg>`; };
+  const line = (series, colors, w, h) => { const n = series[0].length; let g = '';
+    for (let k = 0; k < 4; k++) g += `<line x1="0" x2="${w}" y1="${h * k / 4}" y2="${h * k / 4}" stroke="#eef1f7"/>`;
+    series.forEach((s, k) => { const mx = Math.max(...s) * 1.1, mn = Math.min(...s) * .85; const pts = s.map((v, i) => `${i * w / (n - 1)},${h - (v - mn) / (mx - mn) * h}`).join(' ');
+      if (!k) g += `<polygon points="0,${h} ${pts} ${w},${h}" fill="${colors[k]}" opacity=".12"/>`; g += `<polyline points="${pts}" fill="none" stroke="${colors[k]}" stroke-width="3" stroke-linejoin="round"/>`; });
+    return `<svg width="${w}" height="${h}">${g}</svg>`; };
+  const donut = (parts, r, labels) => { const tot = parts.reduce((a, b) => a + b, 0); let a = -Math.PI / 2, g = '';
+    parts.forEach((p, i) => { const b = a + p / tot * Math.PI * 2, L = b - a > Math.PI ? 1 : 0; g += `<path d="M ${r + r * Math.cos(a)} ${r + r * Math.sin(a)} A ${r} ${r} 0 ${L} 1 ${r + r * Math.cos(b)} ${r + r * Math.sin(b)}" stroke="${P[i]}" stroke-width="${r * .38}" fill="none"/>`; a = b; });
+    const lg = labels ? `<div style="display:grid;gap:6px;font-size:12.5px">${labels.map((l, i) => `<span><i style="display:inline-block;width:10px;height:10px;border-radius:3px;background:${P[i]};margin-right:6px"></i>${l} · <b>${Math.round(parts[i] / tot * 100)}%</b></span>`).join('')}</div>` : '';
+    return `<div style="display:flex;gap:18px;align-items:center"><svg width="${r * 2 + 20}" height="${r * 2 + 20}" viewBox="${-10} ${-10} ${r * 2 + 20} ${r * 2 + 20}">${g}</svg>${lg}</div>`; };
+  const kpi = (l, v, d, up = true) => `<div class="m-kpi"><small>${l}</small><b>${v}</b>${d ? `<i class="${up ? 'up' : 'down'}">${up ? '▲' : '▼'} ${d}</i>` : ''}</div>`;
+  const names = ['Agent Asha', 'Agent Ravi', 'Agent Meena', 'Agent Kiran', 'Agent Farhan', 'Agent Divya', 'Agent Sunil', 'Agent Priya'];
+
+  const M = {
+    scripts: () => {
+      const cards = [['Opening', 'Greeting', 'Hi {name}, thank you for contacting Northwind Support. My name is {agent}. How can I help you today?', 'Send within 60 seconds of the chat being assigned.'],
+        ['Documents', 'Document missing', 'Your account is pending because your proof of address has not been uploaded yet. I have sent you a secure upload link.', 'Only send the link if the document is missing.'],
+        ['Documents', 'Documents under review', 'Thank you for uploading your documents. They are now under review and will be checked within 24 hours.', ''],
+        ['App issues', 'OTP not received', 'If you have not received the OTP, please wait 30 seconds and tap "Resend code".', ''],
+        ['Escalation', 'Upset customer', "I'm sorry for the trouble you've faced, and I understand your frustration. Let me look into this right away.", 'Use L.A.S.T.: Listen, Acknowledge, Solve, Thank.'],
+        ['Closing', 'Closing the chat', 'Thank you for chatting with Northwind Support, {name}. Have a great day!', '']];
+      return `<div class="m-top"><div class="m-logo">CS</div><b>Chat Scripts Library</b><span class="m-sub">Sign-up support · 8 languages</span><span class="m-sp"></span><span class="m-pill">👩‍💼 Agent</span><span class="m-btn">🌓</span><span class="m-btn">⎋ Sign out</span></div>
+      <div class="m-body"><div class="m-row"><div class="m-search">🔍&nbsp; Search by issue, status or keyword…</div><div class="m-sel">English ▾</div><div class="m-btn">☑ Show English too</div></div>
+      <div class="m-chips">${['All 42', 'Opening 6', 'Documents 9', 'Account status 8', 'App issues 7', 'Escalation 5', 'Closing 7'].map((c, i) => `<span class="m-chip ${i ? '' : 'on'}">${c}</span>`).join('')}</div>
+      <div class="m-grid3">${cards.map(c => `<div class="m-card"><div class="m-cat">${c[0]}</div><h5>${c[1]}</h5><div class="m-txt">${c[2]}</div>${c[3] ? `<div class="m-note">🟡 <b>Agent note:</b> ${c[3]}</div>` : ''}<div class="m-copy">📋 Copy</div></div>`).join('')}</div></div>`;
+    },
+    hc: () => {
+      const items = ['📊 Overview', '👥 Active Agents', '🧑 Agent Attendance', '🗓 Weekly Roster', '🏖 Leave Balance', '📅 Attendance Calendar', '🏖 Leave Management', '📈 Analytics'];
+      const wf = ['🧮 Agents in Sheet', '📉 Shrinkage', '🚪 Attrition', '🧪 Data Quality', '🕘 Punch-in Board', '⚙️ Admin'];
+      const days = 20, pr = [], lv = [], ab = []; for (let i = 0; i < days; i++) { const l = R(0, 3), a = R(0, 2); lv.push(l); ab.push(a); pr.push(24 - l - a); }
+      const rows = [['Agent Ravi', 'Late login', 'l'], ['Agent Divya', 'Absent', 'a'], ['Agent Sunil', 'Not marked', 'a'], ['Agent Priya', 'Leave request', 'p'], ['Agent Kiran', 'Leave request', 'p']];
+      return `<div class="m-side"><div class="brand"><div class="m-logo">HC</div>Attendance &amp; Leave</div><div class="grp">Dashboard</div>${items.map((x, i) => `<div class="it ${i ? '' : 'on'}">${x}</div>`).join('')}<div class="grp">Workforce</div>${wf.map(x => `<div class="it">${x}</div>`).join('')}</div>
+      <div class="m-main"><div class="m-top"><b style="font-size:18px">Attendance &amp; Leave Dashboard</b><span class="m-sub">Team view · as of 16 Nov</span><span class="m-sp"></span><span class="m-btn">Team Leader view ▾</span><span class="m-btn">🖨 PDF</span><span class="m-btn">⎋ Sign out</span></div>
+      <div class="m-body"><div class="m-kpis" style="grid-template-columns:repeat(4,1fr)">${kpi('Active agents', '24')}${kpi('Present today', '21', '2 vs yesterday')}${kpi('On leave', '2')}${kpi('Month attendance', '94.6%', '1.2 pts')}</div>
+      <div style="display:grid;grid-template-columns:1.7fr 1fr;gap:14px;margin-bottom:14px"><div class="m-panel"><h6>Daily Attendance Trend</h6><small>Present vs leave vs absent per day</small><div style="margin-top:8px">${bars([pr, lv, ab], ['#6d4aff', '#f59e0b', '#ef4444'], 700, 210, [...Array(days)].map((_, i) => i + 1))}</div></div>
+      <div class="m-panel"><h6>Attendance Status Distribution</h6><small>Selected month · agent-days</small><div style="margin-top:14px">${donut([420, 26, 14, 18], 78, ['Present', 'Leave', 'Absent', 'Late login'])}</div></div></div>
+      <div class="m-panel"><h6>Today's Attention List</h6><table class="m-table"><tr><th>Agent</th><th>Language</th><th>Shift</th><th>Status</th><th>Action</th></tr>${rows.map((r, i) => `<tr><td><b>${r[0]}</b></td><td>${['Hindi', 'Tamil', 'Telugu', 'English', 'Bengali'][i]}</td><td>${['09:00', '10:00', '09:00', '11:00', '10:00'][i]}</td><td><span class="st ${r[2]}">${r[1]}</span></td><td style="color:#6d4aff;font-weight:600">${r[2] === 'p' ? 'Review →' : 'Open →'}</td></tr>`).join('')}</table></div></div></div>`;
+    },
+    raw: () => {
+      const t = [], c = []; for (let i = 0; i < 30; i++) { t.push(R(380, 520) + i * 3); c.push(R(84, 93)); }
+      const cities = ['City A', 'City B', 'City C', 'City D', 'City E', 'City F'], cv = [920, 780, 640, 510, 430, 360];
+      return `<div class="hd"><b>🚀 Team Performance Dashboard</b><span>Live from the raw data sheet</span><span class="m-sp" style="flex:1"></span><span class="m-btn" style="color:#18203a">⟳ Refresh</span><span class="m-btn" style="color:#18203a">⬇ Excel</span><span class="m-btn" style="color:#18203a">⬇ PDF</span></div>
+      <div class="m-filters">${['Daily', 'Weekly', 'Monthly'].map((x, i) => `<span class="m-f ${i === 1 ? 'on' : ''}">${x}</span>`).join('')}<span class="m-f">📅 Last 30 days</span><span class="m-f">👤 Agent</span><span class="m-f">🗣 Language</span><span class="m-f">🏙 City</span><span class="m-f">🏷 Category</span><span class="m-f">🌱 Organic</span><span class="m-f">📌 Status</span><span class="m-f">🚗 Product</span><span class="m-f">↺ Reset</span></div>
+      <div class="m-body"><div class="m-kpis" style="grid-template-columns:repeat(5,1fr)">${kpi('Tickets', '14,382', '6.1%')}${kpi('CSAT', '89.4%', '1.8 pts')}${kpi('First response time', '38s', '4s faster')}${kpi('Avg handling time', '6m 12s', '9s', false)}${kpi('Conversion', '31.7%', '2.3 pts')}</div>
+      <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:14px;margin-bottom:14px"><div class="m-panel"><h6>📈 Daily trend · tickets &amp; CSAT</h6><div class="legend" style="margin:4px 0 8px"><span><i style="background:#6d4aff"></i>Tickets</span><span><i style="background:#00b8d9"></i>CSAT %</span></div>${line([t, c], ['#6d4aff', '#00b8d9'], 690, 190)}</div>
+      <div class="m-panel"><h6>🏷 Issue mix</h6><small>Share of tickets by category</small><div style="margin-top:12px">${donut([34, 22, 18, 14, 12], 74, ['Documents', 'Account status', 'App issues', 'Verification', 'Other'])}</div></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="m-panel"><h6>🏅 City ranking · organic inflow</h6>${cities.map((x, i) => `<div style="display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px"><span style="width:60px">${x}</span><span style="flex:1;height:14px;border-radius:7px;background:#eef1f7"><span style="display:block;height:100%;width:${cv[i] / 10}%;border-radius:7px;background:linear-gradient(90deg,#6d4aff,#00b8d9)"></span></span><b style="width:40px;text-align:right">${cv[i]}</b></div>`).join('')}</div>
+      <div class="m-panel"><h6>👥 Agent performance</h6><table class="m-table"><tr><th>Agent</th><th>Tickets</th><th>CSAT</th><th>FRT</th><th>Conv.</th></tr>${names.slice(0, 5).map(n => `<tr><td><b>${n}</b></td><td>${R(520, 760)}</td><td>${R(85, 95)}%</td><td>${R(28, 49)}s</td><td>${R(26, 38)}%</td></tr>`).join('')}</table></div></div></div>`;
+    },
+    tt: () => {
+      const slots = ['09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30'], cur = 11;
+      const rows = names.map((n, k) => { const off = k === 6; let done = 0; const cells = slots.map((s, i) => { if (off) return '<span class="cell c-n">–</span>'; if (i > cur) return '<span class="cell c-n">·</span>'; const v = R(2, 7); done += v; const cl = v >= 5 ? 'c-g' : v >= 4 ? 'c-y' : 'c-r'; return `<span class="cell ${cl} ${i === cur ? 'cur' : ''}">${v}</span>`; });
+        const tgt = 80; return `<tr class="${off ? 'off' : ''}"><td><b>${n}</b>${off ? ' <small style="color:#9ca3af">(on leave)</small>' : ''}</td><td>${['Hindi', 'Tamil', 'Telugu', 'English', 'Bengali', 'Hindi', 'Tamil', 'Telugu'][k]}</td><td>${tgt}</td><td><b>${off ? '–' : done}</b></td><td>${off ? '–' : Math.max(0, tgt - done)}</td>${cells.map(c => `<td>${c}</td>`).join('')}</tr>`; }).join('');
+      return `<div class="m-top"><div class="m-logo">⚡</div><b>Ticket Tracker</b><span class="m-sub">Live · every 30 minutes</span><span class="m-sp"></span><b style="font-size:20px;color:#6d4aff">14:42</b><span class="m-btn">⚙️ Admin</span><span class="m-btn">🔔</span><span class="m-btn">⟳</span><span class="m-btn">⎋</span></div>
+      <div class="m-filters">${['⚡ Live 30-min', '📅 Daily view', '🔁 Duplicate & Rejected', '🗂 Category inflow', '📆 Weekly inflow', '📊 Analytics'].map((x, i) => `<span class="m-f ${i ? '' : 'on'}">${x}</span>`).join('')}</div>
+      <div class="m-body"><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><span class="m-f">All languages ▾</span><span class="m-f">All shifts ▾</span><span class="m-f">☑ Present only</span><span class="m-sp" style="flex:1"></span><div class="legend"><span><i class="c-g"></i>Target met</span><span><i class="c-y"></i>Close</span><span><i class="c-r"></i>Below</span><span><i class="c-n"></i>Not started</span></div><span class="m-btn" style="background:linear-gradient(135deg,#6d4aff,#00b8d9);color:#fff;border:none">📋 Copy update message</span></div>
+      <div class="m-panel" style="padding:8px"><table class="m-table tt"><tr><th>Agent</th><th>Lang</th><th>Target</th><th>Done</th><th>Left</th>${slots.map(s => `<th>${s}</th>`).join('')}</tr>${rows}</table></div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px">${kpi('Team total today', '386', '8% vs yesterday')}${kpi('On track', '5 / 7')}${kpi('🏆 Top agent', 'Agent Meena')}</div></div>`;
+    }
+  };
+  document.querySelectorAll('#impList .mockpage').forEach(m => m.innerHTML = M[m.dataset.mock]());
+  const screens = [...document.querySelectorAll('#impList .screen')];
+  const fit = () => screens.forEach(s => { const m = s.querySelector('.mockpage'); m.style.transform = `scale(${s.clientWidth / 1440})`; });
+  fit(); addEventListener('resize', fit); new ResizeObserver(fit).observe(document.getElementById('impList'));
+  document.querySelectorAll('#impList .imp').forEach(card => card.querySelectorAll('.imp-tabs button').forEach(b => b.onclick = () => {
+    card.querySelectorAll('.imp-tabs button').forEach(x => x.classList.toggle('on', x === b));
+    card.querySelectorAll('.imp-pane').forEach(p => p.classList.toggle('on', p.dataset.p === b.dataset.pane));
+  }));
+})();
+</script>
 
 <!-- SKILLS -->
 <section id="skills">
